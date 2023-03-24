@@ -1,58 +1,88 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Startpage</title>
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="shortcut icon" href="https://aergiasdream.github.io/favicon.svg">
+    <link rel="stylesheet" href="src/style-updated.css">
+    <link rel="shortcut icon" href="src/favicon.svg">
   </head>
   <body>
     <div class="container">
-	<div class="bookmark-section">
-	  <div class="bookmark-title"><span>Frequent</span></div>
-	  <div class="bookmark-list-container">
-	    <a class="cell" href="https://vid.puffyan.us/" target="_blank" rel="noopener"><img src="img/invidious3.png"></a>
-	    <a class="cell" href="https://odysee.com" target="_blank" rel="noopener"><img src="img/odysee.png"></a>
-	    <a class="cell" href="https://discogs.com" target="_blank" rel="noopener"><img src="img/discogs.png"></a>
-	    <a class="cell" href="https://plaza.one/" target="_blank" rel="noopener"><img src="img/nightwaveplaza.png"></a>
-	    <a class="cell" href="https://diasp.org" target="_blank" rel="noopener"><img src="img/diaspora"></a>
-	    <a class="cell" href="https://libre.fm" target="_blank" rel="noopener"><img src="img/libre_fm.png"></a>
-	  </div>
+      <div class="image cell-1x2">
+      </div>
+      <div class="image cell-1x1">
+      </div>
+      <div class="search cell-2x1">
+	<div id="engines">
+	  <span>ddg</span>
+	  <span>google</span>
+	  <span>askjeeves</span>
 	</div>
-	<div class="bookmark-section">
-	  <div class="bookmark-title"><span>Development</span></div>
-	  <div class="bookmark-list-container">
-	    <a class="cell" href="https://freecodecamp.org" target="_blank" rel="noopener"><img src="img/freecodecamp.svg"></a>
-	    <a class="cell" href="https://gitlab.com" target="_blank" rel="noopener"><img src="img/gitlab.svg"></a>
-	    <a class="cell" href="https://devhints.io/bash" target="_blank" rel="noopener"><img src="img/shell.svg"></a>
-	    <a class="cell" href="https://developer.mozilla.org" target="_blank" rel="noopener"><img src="img/mdn.png"></a>
-	    <a class="cell" href="https://terminal.sexy/" target="_blank" rel="noopener"></a>
-	    <a class="cell" href="" target="_blank" rel="noopener"></a>
-	  </div>
-	</div>
-	<div class="bookmark-section">
-	  <div class="bookmark-title"><span>Social</span></div>
-	  <div class="bookmark-list-container">
-	    <a class="cell" href="https://mastodon.social" target="_blank" rel="noopener"><img src="img/mastodon2.png"></a>
-	    <a class="cell" href="https://nitter.com" target="_blank" rel="noopener"><img src="img/nitter.svg"></a>
-	    <a class="cell" href="https://lemmy.ml" target="_blank" rel="noopener"><img src="img/lemmy.png"></a>
-	    <a class="cell" href="" target="_blank" rel="noopener"></a>
-	    <a class="cell" href="" target="_blank" rel="noopener"></a>
-	    <a class="cell" href="" target="_blank" rel="noopener"></a>
-	  </div>
-	</div>
-	<div class="bookmark-section">
-	  <div class="bookmark-title"><span>Entertainment</span></div>
-	  <div class="bookmark-list-container">
-	    <a class="cell" href="https://wiki.minetest.net/Main_Page" target="_blank" rel="noopener"><img src="img/minetest.png"></a>
-	    <a class="cell" href="https://starbounder.org/Starbound_Wiki" target="_blank" rel="noopener"><img src="img/starbound2.png"></a>
-	    <a class="cell" href="https://dynmap.ruslotro.com" target="_blank" rel="noopener"><img src="img/lotro.png"></a>
-	    <a class="cell" href="https://dontstarve.fandom.com/wiki/Don%27t_Starve_Wiki" target="_blank" rel="noopener"><img src="img/dontstarve.png"></a>
-	    <a class="cell" href="https://terraria.fandom.com/wiki/Terraria_Wiki" target="_blank" rel="noopener"><img src="img/terraria.png"></a>
-	    <a class="cell" href="" target="_blank" rel="noopener"></a>
-	  </div>
-
-	</div>
+	<form target="_blank" action="https://duckduckgo.com/">
+	  <label for="q"></label>
+	  <input name="q" type="text" autofocus/>
+	</form>
+      </div>
+      <div class="bookmark-section cell-1x1">
+	<span>Frequent</span>
+	<ul>
+	  <li><a href="https://vid.puffyan.us/" target="_blank" rel="noopener">invidious</a></li>
+	  <li><a href="https://odysee.com" target="_blank" rel="noopener">odysee</a></li>
+	  <li><a href="https://discogs.com" target="_blank" rel="noopener">discogs</a></li>
+	  <li><a href="https://plaza.one/" target="_blank" rel="noopener">plaza.one</a></li>
+	  <li><a href="https://diasp.org" target="_blank" rel="noopener">diaspora</a></li>
+	  <li><a href="https://libre.fm" target="_blank" rel="noopener">libre.fm</a></li>
+	</ul>
+      </div>
+      <div class="image cell-1x1">
+      </div>
+      <div class="weather cell-1x1">
+      </div>
+      <div class="image cell-1x1">
+      </div>
+      <div class="bookmark-section cell-1x1">
+	<span>Development</span>
+	<ul>
+	  <li><a href="https://freecodecamp.org" target="_blank" rel="noopener">freecodecamp</a></li>
+	  <li><a href="https://gitlab.com" target="_blank" rel="noopener">gitlab</a></li>
+	  <li><a href="https://devhints.io/bash" target="_blank" rel="noopener">devhints.io</a></li>
+	  <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">mdn</a></li>
+	</ul>
+      </div>
+      <div class="weather cell-3x2">
+      </div>
+      <div class="image cell-1x1">
+      </div>
+      <div class="bookmark-section cell-1x1">
+	<span>Social</span>
+	<ul>
+	  <li><a href="https://mastodon.social" target="_blank" rel="noopener">mastodon</a></li>
+	  <li><a href="https://nitter.com" target="_blank" rel="noopener">nitter</a></li>
+	  <li><a href="https://lemmy.ml" target="_blank" rel="noopener">lemmy</a></li>
+	</ul>
+      </div>
+      <div class="weather cell-2x2">
+      </div>
+      <div class="bookmark-section cell-1x1">
+	<span>Entertainment</span>
+	<ul>
+	  <li><a href="https://wiki.minetest.net/Main_Page" target="_blank" rel="noopener">minetest</a></li>
+	  <li><a href="https://starbounder.org/Starbound_Wiki" target="_blank" rel="noopener">starbound</a></li>
+	  <li><a href="https://dynmap.ruslotro.com" target="_blank" rel="noopener">lotro</a></li>
+	  <li><a href="https://dontstarve.fandom.com/wiki/Don%27t_Starve_Wiki" target="_blank" rel="noopener">don't starve</a></li>
+	  <li><a href="https://terraria.fandom.com/wiki/Terraria_Wiki" target="_blank" rel="noopener">terraria</a></li>
+	</ul>
+      </div>
+      <div class="bookmark-section cell-1x1">
+      </div>
+      <div class="bookmark-section cell-1x1">
+      </div>
+      <div class="bookmark-section cell-1x1">
+      </div>
+      <div class="bookmark-section cell-1x1">
+      </div>
+      <div class="bookmark-section cell-1x1">
+      </div>
     </div>
-</body>
+  </body>
 </html>
