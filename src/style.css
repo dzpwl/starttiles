@@ -1,3 +1,19 @@
+@import url(https://fonts.googleapis.com/css2?family=Public+Sans);
+@import url(https://fonts.googleapis.com/css2?family=Overpass+Mono);
+@import url(https://fonts.googleapis.com/css2?family=Libre+Baskerville);
+
+:root {
+  --color-bg: #241919;
+  --color-bg-comp: #192424;
+  --color-triadic1: #847ef9;
+  --color-triadic2: #f9847e;
+  --color-triadic3: #7df984;
+  --color-text: #bababa;
+  --font-serif: 'Libre Baskerville';
+  --font-mono:  'Overpass Mono';
+  --font-sans:  'Public Sans';
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -5,10 +21,11 @@
 }
 
 body {
-  font-family: 'OpenDyslexic Mono', 'CozetteVector', 'Space Mono', 'Roboto', sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  text-transform: lowercase;
   overflow: hidden;
-  background: #062e32;
-  color: #c2cccd;
+  background: var(--color-bg-comp);
+  color: var(--color-text);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -16,66 +33,142 @@ body {
   align-items: center;
 }
 
-.container {
-  width: 80vw;
-  height: 90vh;
-  display: grid;
-  grid-template-columns: repeat(4, 20vw);
-}
-
-.bookmark-section {
-  display: grid;
-  grid-template-columns: repeat(2, calc(20vmin - 6px));
-  grid-template-rows: repeat(7, 10vh); 
-  gap: 10px;
-}
-
-.bookmark-title {
-  border: 1px solid white;
-  border-radius: 10px;
-  grid-column: span 2;
-  display: flex;
-  color: #996300;
-  transition: background 250ms ease-in-out;
-}
-
-.bookmark-title > span {
-  margin: auto;
-  font-size: 2vmin;
-}
-
-.bookmark-list-container {
-  grid-column: span 2;
-  grid-row: span 6;
-  display: grid;
-  grid-template-columns: repeat(2, calc(20vmin - 6px));
-  grid-template-rows: repeat(6, calc(10vmin - 10px));
-  gap: 10px;
-}
-
-.cell {
-  background: #084444;
-  border: 1px solid white;
-  border-radius: 10px;
-  grid-column: span 1;
-  grid-row: span 2;
-  transition: background 250ms ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 a {
-  color: #509b7f; 
+  color: var(--color-triadic2);
   text-decoration: none;
+  transition: color 500ms;
 }
 
-.cell:hover, .bookmark-section:hover .bookmark-title {
-  background: #320606;
-  transition: background 250ms ease-in-out;
+a:hover {
+  color: var(--color-triadic1);
+  transition: color 500ms;
 }
 
-img {
-  max-width: 75%;
-  max-height: 75%;
+ul {
+  margin-top: .3rem;
+}
+
+ul li {
+  font-size: .9rem;
+  padding-top: .15rem;
+}
+
+li::marker {
+  content: '';
+}
+
+input {
+  outline: none;
+  border-radius: .7rem; 
+}
+
+.video, .image {
+  overflow: hidden;
+}
+
+video, img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(4, 9rem);
+  grid-template-columns: repeat(7, 9rem);
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+
+.container>div {
+  border: 5px solid var(--color-text);
+  border-radius: .75rem;
+  background: var(--color-bg);
+}
+
+.bookmarks {
+  padding: 1rem;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.bookmarks>span {
+  font-weight: bold;
+  color: var(--color-triadic3);
+}
+
+.bookmarks>li {
+  padding-top: .8rem;
+}
+
+.cell-2x1 {
+  grid-row: span 1 / span 1;
+  grid-column: span 2 / span 2;
+}
+
+.cell-1x2 {
+  grid-row: span 2 / span 2;
+  grid-column: span 1 / span 1;
+}
+
+.cell-2x2 {
+  grid-row: span 2 / span 2;
+  grid-column: span 2 / span 2;
+}
+
+.cell-3x2 {
+  grid-row: span 2 / span 2;
+  grid-column: span 3 / span 3;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 10rem;
+  margin-right: -10rem;
+  border-left: 1px solid gray;
+  transition: margin 400ms;
+}
+
+.settings ul {
+  padding-left: 1rem;
+  padding-top: 2rem;
+}
+
+.settings-open {
+  margin-right: 0;
+  transition: margin 400ms;
+}
+
+#engines {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+#engines span {
+  color: var(--color-accent2);
+  padding-left: .7rem;
+  padding-right: .7rem;
+}
+
+#settings {
+  padding: 2rem;
+}
+
+.filter {
+  transition: transform 400ms;
+}
+
+.filter:hover {
+  transform: rotate(90deg);
+  transition: transform 400ms;
 }
