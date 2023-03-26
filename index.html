@@ -5,35 +5,41 @@
     <title>Startpage</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="shortcut icon" href="src/favicon.svg">
-    <script src="src/main.js" defer></script>
+    <script type="module" src="src/main.js" defer></script>
   </head>
   <body>
     <div class="settings">
-      <ul>
-	<li>Test 1</li>
-	<li>Test 2</li>
-	<li>Test 3</li>
-      </ul>
+      <div class="settings-options">
+	<ul>
+	  <li>
+	    <input type="checkbox" id="autoplay" name="autoplay" checked>
+	    <label for="autoplay">Autoplay videos</label>
+	  </li>
+	  <li>Test 2</li>
+	  <li>Test 3</li>
+	</ul>
+      </div>
+      <span>Settings can also be modified by editing src/data.json</span>
     </div>
     <div class="container">
-      <div class="image cell-1x2">
+      <div class="cell image size-1x2">
 	<img src="./img/seattle_rain.gif" style="object-position: left"></img>
       </div>
-      <div class="image cell-1x1">
+      <div class="cell image size-1x1">
 	<img src="./img/difara.jpg"></img>
       </div>
-      <div class="search cell-2x1">
+      <div class="cell search size-2x1">
 	<div id="engines">
-	  <span>ddg</span>
+	  <span class="selected">ddg</span>
 	  <span>qwant</span>
-	  <span>askjeeves</span>
+	  <span>searx</span>
 	</div>
-	<form target="_blank" action="https://duckduckgo.com/">
+	<form id="web-search" target="_blank" action="https://duckduckgo.com/">
 	  <label for="q"></label>
-	  <input name="q" type="text" autocomplete="off" autofocus/>
+	  <input name="q" type="text" autocomplete="off"/>
 	</form>
       </div>
-      <div class="bookmarks cell-1x1">
+      <div class="cell bookmarks size-1x1">
 	<span>Frequent</span>
 	<ul>
 	  <li><a href="https://vid.puffyan.us/" target="_blank" rel="noopener">invidious</a></li>
@@ -42,13 +48,13 @@
 	  <li><a href="https://libre.fm" target="_blank" rel="noopener">libre.fm</a></li>
 	</ul>
       </div>
-      <div class="image cell-1x1">
+      <div class="cell image size-1x1">
       </div>
-      <div class="weather cell-1x1">
+      <div class="weather size-1x1">
       </div>
-      <div class="image cell-1x1">
+      <div class="cell image size-1x1">
       </div>
-      <div class="bookmarks cell-1x1">
+      <div class="cell bookmarks size-1x1">
 	<span>Development</span>
 	<ul>
 	  <li><a href="https://freecodecamp.org" target="_blank" rel="noopener">freecodecamp</a></li>
@@ -57,13 +63,13 @@
 	  <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">mdn</a></li>
 	</ul>
       </div>
-      <div class="image cell-1x1">
+      <div class="cell image size-1x1">
 	<img src="./img/montealban.jpg"></img>
       </div>
-      <div class="video cell-3x2">
+      <div class="video size-3x2">
 	<video src="./img/livingroom.mp4" type="video/mp4" autoplay="" loop=""></video>
       </div>
-      <div class="bookmarks cell-1x1">
+      <div class="cell bookmarks size-1x1">
 	<span>Social</span>
 	<ul>
 	  <li><a href="https://mastodon.social" target="_blank" rel="noopener">mastodon</a></li>
@@ -72,10 +78,10 @@
 	  <li><a href="https://lemmy.ml" target="_blank" rel="noopener">lemmy</a></li>
 	</ul>
       </div>
-      <div class="video cell-2x2">
+      <div class="video size-2x2">
 	<video src="./img/flamingos.mp4" type="video/mp4" autoplay="" loop=""></video>
       </div>
-      <div class="bookmarks cell-1x1">
+      <div class="cell bookmarks size-1x1">
 	<span>Game Wikis</span>
 	<ul>
 	  <li><a href="https://wiki.minetest.net/Main_Page" target="_blank" rel="noopener">minetest</a></li>
@@ -84,13 +90,13 @@
 	  <li><a href="https://terraria.fandom.com/wiki/Terraria_Wiki" target="_blank" rel="noopener">terraria</a></li>
 	</ul>
       </div>
-      <div class="bookmarks cell-1x1">
+      <div class="cell bookmarks size-1x1">
       </div>
-      <div class="bookmarks cell-1x1">
+      <div class="cell bookmarks size-1x1">
       </div>
-      <div class="bookmarks cell-1x1">
+      <div class="cell bookmarks size-1x1">
       </div>
-      <div class="bookmarks cell-1x1">
+      <div class="cell bookmarks size-1x1">
 	<span>Home</span>
 	<ul>
 	  <li><a href="http://localhost:8096" target="_blank" rel="noopener">Jellyfin</a></li>
@@ -98,7 +104,7 @@
 	  <li><a href="http://localhost:8082" target="_blank" rel="noopener">Test 2</a></li>
 	</ul>
       </div>
-      <div id="settings" class="cell-1x1">
+      <div id="settings" class="size-1x1">
 	<img src="./img/settings.svg" class="filter"></img>
       </div>
     </div>

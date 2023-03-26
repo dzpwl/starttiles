@@ -6,7 +6,7 @@ Customization is anticipated as follows:
 
 - Add and modify bookmarks
 - Option to limit to a single page 
-- Pre-configured or fully customized olorschemes
+- Pre-configured or fully customized colorschemes
 - Tiled or list style display
   + Tile layout: Modify order and size of tiles for bookmarks and widgets
   + List layout: Display widget info as pure text, single vs multi column 
@@ -15,7 +15,7 @@ For the different layouts, the intent is for the page to calculate an optimal si
 
 ## Credits: ##
 
-#### Inspiration ####
+#### *Inspiration* ####
 
 [startup-page](https://timothypholmes.github.io/startup-page/)
 

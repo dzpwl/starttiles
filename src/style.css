@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Public+Sans);
 @import url(https://fonts.googleapis.com/css2?family=Overpass+Mono);
-@import url(https://fonts.googleapis.com/css2?family=Libre+Baskerville);
+@import url(https://fonts.googleapis.com/css2?family=Zilla+Slab);
 
 :root {
   --color-bg: #241919;
@@ -85,6 +85,8 @@ video, img {
   border-radius: .75rem;
   background: var(--color-bg);
 }
+.container>div:hover {
+}
 
 .bookmarks {
   padding: 1rem;
@@ -101,22 +103,22 @@ video, img {
   padding-top: .8rem;
 }
 
-.cell-2x1 {
+.size-2x1 {
   grid-row: span 1 / span 1;
   grid-column: span 2 / span 2;
 }
 
-.cell-1x2 {
+.size-1x2 {
   grid-row: span 2 / span 2;
   grid-column: span 1 / span 1;
 }
 
-.cell-2x2 {
+.size-2x2 {
   grid-row: span 2 / span 2;
   grid-column: span 2 / span 2;
 }
 
-.cell-3x2 {
+.size-3x2 {
   grid-row: span 2 / span 2;
   grid-column: span 3 / span 3;
 }
@@ -128,20 +130,33 @@ video, img {
   align-items: center;
 }
 
+.selected {
+  color: #fff;
+}
+
 .settings {
   position: fixed;
   top: 0;
   right: 0;
   height: 100%;
-  width: 10rem;
-  margin-right: -10rem;
-  border-left: 1px solid gray;
+  width: 16rem;
+  margin-right: -16rem;
+  border-left: 1px solid #bababa88;
+  padding: 1.2rem;
   transition: margin 400ms;
+  font-family: "Zilla Slab", serif;
+  display: flex;
+  flex-direction: column;
 }
 
+
+.settings span {
+  font-size: .8rem;
+  font-style: italic;
+  margin-top: auto;
+}
 .settings ul {
-  padding-left: 1rem;
-  padding-top: 2rem;
+  margin-top: 0;
 }
 
 .settings-open {
@@ -151,11 +166,10 @@ video, img {
 
 #engines {
   padding-top: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
 #engines span {
-  color: var(--color-accent2);
   padding-left: .7rem;
   padding-right: .7rem;
 }
@@ -165,10 +179,12 @@ video, img {
 }
 
 .filter {
-  transition: transform 400ms;
+  filter: grayscale(1);
+  transition: all 400ms ease-in-out;
 }
 
-.filter:hover {
+#settings:hover .filter {
   transform: rotate(90deg);
-  transition: transform 400ms;
+  filter: none;
+  transition: all 400ms ease-in-out;
 }
