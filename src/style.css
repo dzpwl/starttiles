@@ -130,10 +130,6 @@ video, img {
   align-items: center;
 }
 
-.selected {
-  color: #fff;
-}
-
 .settings {
   position: fixed;
   top: 0;
@@ -172,7 +168,16 @@ video, img {
 #engines span {
   padding-left: .7rem;
   padding-right: .7rem;
+  opacity: 50%;
+  transition: all 250ms ease-in-out;
 }
+
+#engines .selected {
+  color: var(--color-triadic1);
+  opacity: 100%;
+  transition: all 250ms ease-in-out;
+}
+
 
 #settings {
   padding: 2rem;
@@ -187,4 +192,25 @@ video, img {
   transform: rotate(90deg);
   filter: none;
   transition: all 400ms ease-in-out;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+}
+
+#date, #time {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#time {
+  font-size: 1.5rem;
+  margin-top: auto;
+  color: var(--color-triadic3);
+}
+
+#date {
+  margin-bottom: auto;
+  color: var(--color-triadic1);
 }

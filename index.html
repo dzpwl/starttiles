@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="src/style.css">
     <link rel="shortcut icon" href="src/favicon.svg">
     <script type="module" src="src/main.js" defer></script>
+    <script src="src/date.js" defer></script>
   </head>
   <body>
     <div class="settings">
@@ -14,6 +15,10 @@
 	  <li>
 	    <input type="checkbox" id="autoplay" name="autoplay" checked>
 	    <label for="autoplay">Autoplay videos</label>
+	  </li>
+	  <li>
+	    <input type="checkbox" id="clock-style" name="autoplay">
+	    <label for="clock-style">12-hour clock</label>
 	  </li>
 	  <li>Test 2</li>
 	  <li>Test 3</li>
@@ -50,7 +55,7 @@
       </div>
       <div class="cell image size-1x1">
       </div>
-      <div class="weather size-1x1">
+      <div class="cell weather size-1x1">
       </div>
       <div class="cell image size-1x1">
       </div>
@@ -78,7 +83,7 @@
 	  <li><a href="https://lemmy.ml" target="_blank" rel="noopener">lemmy</a></li>
 	</ul>
       </div>
-      <div class="video size-2x2">
+      <div class="cell video size-2x2">
 	<video src="./img/flamingos.mp4" type="video/mp4" autoplay="" loop=""></video>
       </div>
       <div class="cell bookmarks size-1x1">
@@ -94,7 +99,9 @@
       </div>
       <div class="cell bookmarks size-1x1">
       </div>
-      <div class="cell bookmarks size-1x1">
+      <div class="cell date size-1x1">
+	<span id="time"></span>
+	<span id="date"></span>
       </div>
       <div class="cell bookmarks size-1x1">
 	<span>Home</span>
