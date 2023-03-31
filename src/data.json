@@ -3,19 +3,19 @@
     "id": "Frequent",
     "urls": [{
       "name": "Invidious",
-      "link": "https://vid.puffyan.us/"
+      "url": "https://vid.puffyan.us/"
     },
     {
       "name": "Odysee",
-      "link": "https://odysee.com"
+      "url": "https://odysee.com"
     },
     {
       "name": "plaza.one",
-      "link": "https://plaza.one"
+      "url": "https://plaza.one"
     },
     {
       "name": "Libre.fm",
-      "link": "https://libre.fm"
+      "url": "https://libre.fm"
     }
     ]
   },
@@ -23,19 +23,19 @@
     "id": "Development",
     "urls": [{
       "name": "FreeCodeCamp",
-      "link": "https://freecodecamp.org"
+      "url": "https://freecodecamp.org"
     },
     {
       "name": "GitLab",
-      "link": "https://gitlab.com"
+      "url": "https://gitlab.com"
     },
     {
       "name": "DevHints",
-      "link": "https://devhints.io/bash"
+      "url": "https://devhints.io/bash"
     },
     {
       "name": "MDN",
-      "link": "https://developer.mozilla.org"
+      "url": "https://developer.mozilla.org"
     }
     ]
   },
@@ -43,39 +43,39 @@
     "id": "Social",
     "urls": [{
       "name": "Mastodon",
-      "link": "https://mastodon.social"
+      "url": "https://mastodon.social"
     },
     {
       "name": "Nitter",
-      "link": "https://nitter.com"
+      "url": "https://nitter.com"
     },
     {
       "name": "Disapora",
-      "link": "https://diasp.org"
+      "url": "https://diasp.org"
     },
     {
       "name": "Lemmy",
-      "link": "https://lemmy.ml"
+      "url": "https://lemmy.ml"
     }
     ]
   },
   {
-    "id": "Game Wikis",
+    "id": "Wikis",
     "urls": [{
       "name": "Minetest",
-      "link": "https://wiki.minetest.net/Main_Page"
+      "url": "https://wiki.minetest.net/Main_Page"
     },
     {
       "name": "Starbound",
-      "link": "https://starbounder.org/Starbound_Wiki"
+      "url": "https://starbounder.org/Starbound_Wiki"
     },
     {
-      "name": "Don\"t Starve",
-      "link": "https://antifandom.com/dontstarve/wiki/Don%27t_Starve_Wiki"
+      "name": "Don't Starve",
+      "url": "https://antifandom.com/dontstarve/wiki/Don%27t_Starve_Wiki"
     },
     {
       "name": "Terraria",
-      "link": "https://antifandom.com/terraria/wiki/Terraria_Wiki"
+      "url": "https://antifandom.com/terraria/wiki/Terraria_Wiki"
     }
     ]
   },
@@ -83,19 +83,19 @@
     "id": "Home",
     "urls": [{
       "name": "Jellyfin",
-      "link": "https://localhost:8096"
+      "url": "https://localhost:8096"
     },
     {
       "name": "Test 2",
-      "link": ""
+      "url": ""
     },
     {
       "name": "Test 3",
-      "link": ""
+      "url": ""
     },
     {
       "name": "Test 4",
-      "link": ""
+      "url": ""
     }
     ]
   }

@@ -88,6 +88,11 @@ video, img {
 .container>div:hover {
 }
 
+.cell {
+  display: flex;
+  flex-direction: column;
+}
+
 .bookmarks {
   padding: 1rem;
   overflow: scroll;
@@ -124,8 +129,6 @@ video, img {
 }
 
 .search {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -192,11 +195,6 @@ video, img {
   transform: rotate(90deg);
   filter: none;
   transition: all 400ms ease-in-out;
-}
-
-.date {
-  display: flex;
-  flex-direction: column;
 }
 
 #date, #time {

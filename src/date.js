@@ -6,7 +6,7 @@ function showTime() {
   var weekday = days[d.getDay()];
   var date = d.getDate();
   var month = months[d.getMonth()];
-  var minute = d.getMinutes();
+  var minute = d.getMinutes().toString().padStart(2, '0');
   var hour = d.getHours();
   var meridiem = '';
 

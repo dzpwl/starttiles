@@ -7,7 +7,12 @@ fetch('./src/data.json')
   .then(response => {
     return response.json();
   })
-  .then(data => console.log(data));
+  .then(data => { 
+    const bookmarkCells = data.bookmarkContainer; 
+    for (const cell of bookmarkCells) {
+      buildBookmarkCell(cell.id.toLowerCase(), cell);
+    }
+  });
 
 /*Behavior: If setting button is clicked, open settings.
   If settings menu is open and an area outside is clicked, close settings.
@@ -28,7 +33,7 @@ addEventListener('click', event => {
   if (enginesList.contains(event.target) && selectedEngine != event.target) {
     selectedEngine.classList.remove('selected');
     event.target.classList.add('selected');
-    changeSearchEngine(event.target.innerHTML);
+    setSearchEngine(event.target.innerHTML);
   };
 
 });
@@ -43,19 +48,41 @@ addEventListener('keyup', e => {
   };
 });
 
-function changeSearchEngine(engine) {
-  var engineUrl; 
+function setSearchEngine(engine) {
+  var searchUrl; 
   switch (engine) {
     case 'ddg':
-      engineUrl = 'https://duckduckgo.com/';
+      searchUrl = 'https://duckduckgo.com/';
       break;
     case 'qwant':
-      engineUrl = 'https://qwant.com/'
+      searchUrl = 'https://qwant.com/'
       break;
     case 'searx':
-      engineUrl = 'https://searx.info/'
+      searchUrl = 'https://searx.info/'
       break;
   };
-  searchForm.action = engineUrl; 
+  searchForm.action = searchUrl; 
 };
-  
+
+function buildBookmarkCell(cellId, obj) {
+  const cell = document.getElementById(cellId);
+  const span = document.createElement('span'); 
+  const list = document.createElement('ul');
+  const listItems = obj.urls;
+
+  span.textContent = obj.id;
+
+  for (const item of listItems) {
+    const listItem = document.createElement('li');
+    const link = document.createElement('a');
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.href = item.url;
+    link.textContent = item.name;
+    listItem.appendChild(link);
+    list.appendChild(listItem);
+  };
+
+  cell.appendChild(span);
+  cell.appendChild(list);
+};
