@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="src/favicon.svg">
     <script type="module" src="src/main.js" defer></script>
     <script src="src/date.js" defer></script>
+    <script src="src/bookmarks.js" defer></script>
   </head>
   <body>
     <div class="settings">
@@ -17,14 +18,14 @@
 	    <label for="autoplay">Autoplay videos</label>
 	  </li>
 	  <li>
-	    <input type="checkbox" id="clock-style" name="autoplay">
+	    <input type="checkbox" id="clock-style" name="clock-style">
 	    <label for="clock-style">12-hour clock</label>
 	  </li>
 	  <li>Test 2</li>
 	  <li>Test 3</li>
 	</ul>
       </div>
-      <span>Settings can also be modified by editing src/data.json</span>
+      <span>Bookmark entries can also be modified by editing src/data.json</span>
     </div>
     <div class="container">
       <div class="cell image size-1x2">
@@ -44,31 +45,41 @@
 	  <input name="q" type="text" autocomplete="off"/>
 	</form>
       </div>
-      <div id="frequent" class="cell bookmarks size-1x1"> </div>
+      <div id="frequent" class="cell bookmarks size-1x1"> 
+	<img src="./img/edit.svg" class="edit filter"></img>
+      </div>
       <div class="cell image size-1x1"> </div>
       <div class="cell date size-1x1">
 	<span id="time"></span>
 	<span id="date"></span>
       </div>
       <div class="cell image size-1x1"> </div>
-      <div id="development" class="cell bookmarks size-1x1"> </div>
+      <div id="development" class="cell bookmarks size-1x1"> 
+	<img src="./img/edit.svg" class="edit filter"></img>
+      </div>
       <div class="cell image size-1x1">
 	<img src="./img/montealban.jpg"></img>
       </div>
       <div class="video size-3x2">
 	<video src="./img/livingroom.mp4" type="video/mp4" autoplay="" loop=""></video>
       </div>
-      <div id="social" class="cell bookmarks size-1x1"> </div>
+      <div id="social" class="cell bookmarks size-1x1">
+	<img src="./img/edit.svg" class="edit filter"></img>
+      </div>
       <div class="cell video size-2x2">
 	<video src="./img/flamingos.mp4" type="video/mp4" autoplay="" loop=""></video>
       </div>
-      <div id="wikis" class="cell bookmarks size-1x1"> </div>
-      <div class="cell bookmarks size-1x1"> </div>
-      <div class="cell bookmarks size-1x1"> </div>
+      <div id="wikis" class="cell bookmarks size-1x1">
+	<img src="./img/edit.svg" class="edit filter"></img>
+      </div>
+      <div class="cell size-1x1"> </div>
+      <div class="cell size-1x1"> </div>
       <div class="cell weather size-1x1">
 	<span>weather</span>
       </div>
-      <div id="home" class="cell bookmarks size-1x1"> </div>
+      <div id="home" class="cell bookmarks size-1x1"> 
+	<img src="./img/edit.svg" class="edit filter"></img>
+      </div>
       <div id="settings" class="size-1x1">
 	<img src="./img/settings.svg" class="filter"></img>
       </div>

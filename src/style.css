@@ -94,6 +94,7 @@ video, img {
 }
 
 .bookmarks {
+  position: relative;
   padding: 1rem;
   overflow: scroll;
   scrollbar-width: none;
@@ -106,6 +107,23 @@ video, img {
 
 .bookmarks>li {
   padding-top: .8rem;
+}
+
+.edit {
+  opacity: 0;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  bottom: 6px;
+  right: 4px;
+}
+
+.edit:hover {
+  filter: none;
+}
+
+#home:hover .edit, #wikis:hover .edit, #social:hover .edit, #development:hover .edit, #frequent:hover .edit {
+  opacity: 100%;
 }
 
 .size-2x1 {
