@@ -16,7 +16,7 @@ function showTime() {
     hour = hour ? hour : 12;
   }
 
-  document.getElementById('date').innerText = weekday + ', ' + month + ' ' + date;
-  document.getElementById('time').innerText = hour + ':' + minute + meridiem; 
+  document.getElementById('date-text').innerText = weekday + ', ' + month + ' ' + date;
+  document.getElementById('time-text').innerText = hour + ':' + minute + meridiem; 
   setTimeout(showTime, 1000);
 }

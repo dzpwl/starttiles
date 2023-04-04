@@ -1,8 +1,8 @@
-const settingsButton = document.querySelector('#settings');
+const settingsButton = document.querySelector('#settings-cell');
 const settingsBar = document.querySelector('.settings');
 const enginesList = document.querySelector('#engines');
 const searchForm = document.querySelector('#web-search');
-const allVideos = document.querySelectorAll('video');
+const videosList = document.querySelectorAll('video');
 const autoplayCheckbox = document.querySelector('#autoplay');
 
 /*Behavior: If setting button is clicked, open settings.
@@ -61,12 +61,12 @@ function setSearchEngine(engine) {
 
 function setAutoplay() {
   if (autoplayCheckbox.checked) {
-    allVideos.forEach((video) => {
+    videosList.forEach((video) => {
       video.autoplay = true;
       video.play();
     });
   } else {
-    allVideos.forEach((video) => {
+    videosList.forEach((video) => {
       video.autoplay = false;
       video.pause();
       video.currentTime = 0;

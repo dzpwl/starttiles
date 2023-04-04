@@ -3,15 +3,26 @@
 @import url(https://fonts.googleapis.com/css2?family=Zilla+Slab);
 
 :root {
-  --color-bg: #241919;
-  --color-bg-comp: #192424;
-  --color-triadic1: #847ef9;
-  --color-triadic2: #f9847e;
-  --color-triadic3: #7df984;
-  --color-text: #bababa;
+  --cell-bg: #241919;
+  --page-bg: #192424;
+  --accent3: #847ef9;
+  --accent2: #f9847e;
+  --accent1: #7df984;
+  --unfocused-text: #bababa;
+  --cell-borders: #bababa;
   --font-serif: 'Libre Baskerville';
   --font-mono:  'Overpass Mono';
   --font-sans:  'Public Sans';
+}
+
+[theme="default"] {
+  --cell-bg: #241919;
+  --page-bg: #192424;
+  --accent3: #847ef9;
+  --accent2: #f9847e;
+  --accent1: #7df984;
+  --unfocused-text: #bababa;
+  --cell-borders: #bababa;
 }
 
 *, *::before, *::after {
@@ -24,8 +35,8 @@ body {
   font-family: var(--font-sans), sans-serif;
   text-transform: lowercase;
   overflow: hidden;
-  background: var(--color-bg-comp);
-  color: var(--color-text);
+  background: var(--page-bg);
+  color: var(--unfocused-text);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -34,13 +45,13 @@ body {
 }
 
 a {
-  color: var(--color-triadic2);
+  color: var(--accent2);
   text-decoration: none;
   transition: color 500ms;
 }
 
 a:hover {
-  color: var(--color-triadic1);
+  color: var(--accent3);
   transition: color 500ms;
 }
 
@@ -57,19 +68,14 @@ li::marker {
   content: '';
 }
 
-input {
-  outline: none;
-  border-radius: .7rem; 
-}
-
-.video, .image {
-  overflow: hidden;
-}
-
 video, img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.video, .image {
+  overflow: hidden;
 }
 
 .container {
@@ -81,9 +87,9 @@ video, img {
 }
 
 .container>div {
-  border: 5px solid var(--color-text);
+  border: 5px solid var(--cell-borders);
   border-radius: .75rem;
-  background: var(--color-bg);
+  background: var(--cell-bg);
 }
 .container>div:hover {
 }
@@ -100,13 +106,18 @@ video, img {
   scrollbar-width: none;
 }
 
-.bookmarks>span {
+.bookmark-wrapper>span {
   font-weight: bold;
-  color: var(--color-triadic3);
+  color: var(--accent1);
 }
 
-.bookmarks>li {
+.bookmark-wrapper>li {
   padding-top: .8rem;
+}
+
+.bookmark-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .edit {
@@ -122,8 +133,15 @@ video, img {
   filter: none;
 }
 
-#home:hover .edit, #wikis:hover .edit, #social:hover .edit, #development:hover .edit, #frequent:hover .edit {
-  opacity: 100%;
+.edit-wrapper {
+  display: none;
+}
+
+.settings-input{
+  border-radius: 5px;
+  width: 100%;
+  height: 1.5rem;
+  margin-top: .2rem;
 }
 
 .size-2x1 {
@@ -161,7 +179,7 @@ video, img {
   border-left: 1px solid #bababa88;
   padding: 1.2rem;
   transition: margin 400ms;
-  font-family: "Zilla Slab", serif;
+  font-family: var(--font-mono), sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -181,6 +199,16 @@ video, img {
   transition: margin 400ms;
 }
 
+.filter {
+  filter: grayscale(1);
+  transition: all 400ms ease-in-out;
+}
+
+#web-search-field {
+  outline: none;
+  border-radius: .7rem; 
+}
+
 #engines {
   padding-top: 1rem;
   padding-bottom: 2rem;
@@ -194,39 +222,56 @@ video, img {
 }
 
 #engines .selected {
-  color: var(--color-triadic1);
+  color: var(--accent3);
   opacity: 100%;
   transition: all 250ms ease-in-out;
 }
 
-
-#settings {
+#settings-cell {
   padding: 2rem;
 }
 
-.filter {
-  filter: grayscale(1);
-  transition: all 400ms ease-in-out;
-}
-
-#settings:hover .filter {
+#settings-cell:hover .filter {
   transform: rotate(90deg);
   filter: none;
   transition: all 400ms ease-in-out;
 }
 
-#date, #time {
+#date-text, #time-text {
   margin-left: auto;
   margin-right: auto;
 }
 
-#time {
+#time-text {
   font-size: 1.5rem;
   margin-top: auto;
-  color: var(--color-triadic3);
+  color: var(--accent1);
 }
 
-#date {
+#date-text {
   margin-bottom: auto;
-  color: var(--color-triadic1);
+  color: var(--accent3);
+}
+
+#settings-bar-colors {
+  display: flex;
+  flex-direction: column;
+}
+
+#settings-bar-colors li {
+  padding-top: .8rem;
+}
+
+#color-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+#reset, #apply {
+  width: 5rem;
+  margin: 0 auto;
+}
+
+#home:hover .edit, #wikis:hover .edit, #social:hover .edit, #development:hover .edit, #frequent:hover .edit {
+  opacity: 100%;
 }
