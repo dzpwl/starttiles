@@ -86,16 +86,16 @@
       "url": "https://localhost:8096"
     },
     {
-      "name": "Test 2",
-      "url": ""
+      "name": "Gitea",
+      "url": "https://localhost:3000"
     },
     {
-      "name": "Test 3",
-      "url": ""
+      "name": "Owncloud",
+      "url": "https://localhost:9140"
     },
     {
-      "name": "Test 4",
-      "url": ""
+      "name": "LibreNMS",
+      "url": "https://librenms.example.com/"
     }
     ]
   }

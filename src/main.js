@@ -5,6 +5,13 @@ const searchForm = document.querySelector('#web-search');
 const videosList = document.querySelectorAll('video');
 const autoplayCheckbox = document.querySelector('#autoplay');
 
+if (localStorage.getItem('autoplay') === 'null') {
+  localStorage.setItem('autoplay', true);
+} else if (localStorage.getItem('autoplay') === 'false') {
+  autoplayCheckbox.checked = false;
+  setAutoplay();
+}
+
 /*Behavior: If setting button is clicked, open settings.
   If settings menu is open and an area outside is clicked, close settings.
   If settings menu is open and escape is pressed, close settings.*/
@@ -65,11 +72,13 @@ function setAutoplay() {
       video.autoplay = true;
       video.play();
     });
+    localStorage.setItem('autoplay', true);
   } else {
     videosList.forEach((video) => {
       video.autoplay = false;
       video.pause();
       video.currentTime = 0;
     });
+    localStorage.setItem('autoplay', false);
   };
 };

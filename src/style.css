@@ -8,7 +8,7 @@
   --accent3: #847ef9;
   --accent2: #f9847e;
   --accent1: #7df984;
-  --unfocused-text: #bababa;
+  --text-fg: #bababa;
   --cell-borders: #bababa;
   --font-serif: 'Libre Baskerville';
   --font-mono:  'Overpass Mono';
@@ -21,7 +21,7 @@
   --accent3: #847ef9;
   --accent2: #f9847e;
   --accent1: #7df984;
-  --unfocused-text: #bababa;
+  --text-fg: #bababa;
   --cell-borders: #bababa;
 }
 
@@ -36,7 +36,7 @@ body {
   text-transform: lowercase;
   overflow: hidden;
   background: var(--page-bg);
-  color: var(--unfocused-text);
+  color: var(--text-fg);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -106,42 +106,15 @@ video, img {
   scrollbar-width: none;
 }
 
-.bookmark-wrapper>span {
+.bookmarks>span {
   font-weight: bold;
   color: var(--accent1);
 }
 
-.bookmark-wrapper>li {
-  padding-top: .8rem;
-}
-
-.bookmark-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.edit {
-  opacity: 0;
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  bottom: 6px;
-  right: 4px;
-}
-
-.edit:hover {
-  filter: none;
-}
-
-.edit-wrapper {
-  display: none;
-}
-
 .settings-input{
   border-radius: 5px;
-  width: 100%;
+  width: 1.5rem;
   height: 1.5rem;
-  margin-top: .2rem;
 }
 
 .size-2x1 {
@@ -182,14 +155,21 @@ video, img {
   font-family: var(--font-mono), sans-serif;
   display: flex;
   flex-direction: column;
+  background: #2b2b2b;
 }
 
+.settings h3 {
+  color: var(--accent1);
+  border-bottom: 2px solid var(--text-fg);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
 
 .settings span {
   font-size: .8rem;
   font-style: italic;
-  margin-top: auto;
 }
+
 .settings ul {
   margin-top: 0;
 }
@@ -227,6 +207,27 @@ video, img {
   transition: all 250ms ease-in-out;
 }
 
+#weather {
+  display: flex;
+  flex-direction: column;
+}
+
+#weather * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#weather-image{
+  margin-top: auto;
+  object-fit: contain;
+  width: 64px;
+  height: 64px;
+}
+
+#weather-details {
+  margin-bottom: auto;
+}
+
 #settings-cell {
   padding: 2rem;
 }
@@ -253,13 +254,20 @@ video, img {
   color: var(--accent3);
 }
 
-#settings-bar-colors {
-  display: flex;
-  flex-direction: column;
-}
-
 #settings-bar-colors li {
   padding-top: .8rem;
+  display: flex;
+}
+
+#settings-bar-colors label {
+  margin-top: auto;
+  padding-left: .4rem;
+}
+
+#buttons {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 1rem;
 }
 
 #color-buttons {
@@ -267,11 +275,7 @@ video, img {
   flex-direction: row;
 }
 
-#reset, #apply {
-  width: 5rem;
+#reset, #apply, #save {
+  width: 3rem;
   margin: 0 auto;
-}
-
-#home:hover .edit, #wikis:hover .edit, #social:hover .edit, #development:hover .edit, #frequent:hover .edit {
-  opacity: 100%;
 }

@@ -9,56 +9,63 @@
     <script src="src/date.js" defer></script>
     <script src="src/bookmarks.js" defer></script>
     <script src="src/color.js" defer></script>
+    <script src="src/weather.js" defer></script>
   </head>
   <body>
     <div class="settings">
       <div class="settings-options">
-	<ul>
+	<h3>Theme</h3>
+	<ul id="settings-bar-colors">
+	  <li>
+	    <input type="color" id="page-bg" name="page-bg" class="settings-input">
+	    <label for="page-bg">Page background</label>
+	  </li>
+	  <li>
+	    <input type="color" id="cell-bg" name="cell-bg" class="settings-input">
+	    <label for="cell-bg">Cell background</label>
+	  </li>
+	  <li>
+	    <input type="color" id="cell-borders" name="cell-borders" class="settings-input">
+	    <label for="cell-borders">Cell borders</label>
+	  </li>
+	  <li>
+	    <input type="color" id="text-fg" name="text-fg" class="settings-input">
+	    <label for="text-fg">Text</label>
+	  </li>
+	  <li>
+	    <input type="color" id="accent1" name="accent1" class="settings-input">
+	    <label for="accent1">Accent 1</label>
+	  </li>
+	  <li>
+	    <input type="color" id="accent2" name="accent2" class="settings-input">
+	    <label for="accent2">Accent 2</label>
+	  </li>
+	  <li>
+	    <input type="color" id="accent3" name="accent3" class="settings-input">
+	    <label for="accent3">Accent 3</label>
+	  </li>
+	  <li id="color-buttons">
+	  </li>
 	  <li>
 	    <input type="checkbox" id="autoplay" name="autoplay" checked>
 	    <label for="autoplay">Autoplay videos</label>
 	  </li>
 	  <li>
-	    <input type="checkbox" id="clock-style" name="clock-style">
-	    <label for="clock-style">12-hour clock</label>
+	    <input type="checkbox" id="clock24" name="clock24" onchange="setClockStyle()">
+	    <label for="clock24">24-hour clock</label>
 	  </li>
 	  <li>
-	    <h3>Theme</h3>
-	    <ul id="settings-bar-colors">
-	      <li>
-		<label for="page-bg">Page background</label>
-		<input type="color" id="page-bg" name="page-bg" class="settings-input">
-	      </li>
-	      <li>
-		<label for="cell-bg">Cell background</label>
-		<input type="color" id="cell-bg" name="cell-bg" class="settings-input">
-	      </li>
-	      <li>
-		<label for="cell-borders">Cell borders</label>
-		<input type="color" id="cell-borders" name="cell-borders" class="settings-input">
-	      </li>
-	      <li>
-		<label for="unfocused-text">Unfocused text</label>
-		<input type="color" id="unfocused-text" name="unfocused-text" class="settings-input">
-	      </li>
-	      <li>
-		<label for="accent1">Accent 1</label>
-		<input type="color" id="accent1" name="accent1" class="settings-input">
-	      </li>
-	      <li>
-		<label for="accent2">Accent 2</label>
-		<input type="color" id="accent2" name="accent2" class="settings-input">
-	      </li>
-	      <li>
-		<label for="accent3">Accent 3</label>
-		<input type="color" id="accent3" name="accent3" class="settings-input">
-	      </li>
-	      <li id="color-buttons">
-		<input type="button" id="reset" name="reset" value="reset" onClick="resetTheme()">
-		<input type="button" id="apply" name="apply" value="apply" onClick="setCustomTheme()">
-	      </li>
+	    <input type="radio" id="celsius" name="temp-units" value="celsius" onClick="getWeather()" checked>
+	    <label for="celsius">celsius</label>
 	  </li>
-	</ul>
+	  <li>
+	    <input type="radio" id="fahrenheit" name="temp-units" value="fahrenheit" onClick="getWeather()">
+	    <label for="fahrenheit">fahrenheit</label>
+	  </li>
+      </div>
+      <div id="buttons">
+	<input type="button" id="reset" name="reset" value="reset" onClick="applyDefaultTheme()">
+	<input type="button" id="apply" name="apply" value="apply" onClick="saveCustomTheme()">
       </div>
       <span>Bookmark entries can also be modified by editing src/data.json</span>
     </div>
@@ -80,51 +87,30 @@
 	  <input name="q" type="text" id="web-search-field" autocomplete="off"/>
 	</form>
       </div>
-      <div id="frequent" class="cell bookmarks size-1x1"> 
-	<div class="bookmark-wrapper">
-	  <img src="./img/edit.svg" class="edit filter"></img>
-	</div>
-      </div>
+      <div id="frequent" class="cell bookmarks size-1x1"> </div>
       <div class="cell image size-1x1"> </div>
       <div class="cell date-cell size-1x1">
 	<span id="time-text"></span>
 	<span id="date-text"></span>
       </div>
       <div class="cell image size-1x1"> </div>
-      <div id="development" class="cell bookmarks size-1x1"> 
-	<div class="bookmark-wrapper">
-	  <img src="./img/edit.svg" class="edit filter"></img>
-	</div>
-      </div>
+      <div id="development" class="cell bookmarks size-1x1"> </div>
       <div class="cell image size-1x1">
 	<img src="./img/montealban.jpg"></img>
       </div>
       <div class="video size-3x2">
 	<video src="./img/livingroom.mp4" type="video/mp4" autoplay="" loop=""></video>
       </div>
-      <div id="social" class="cell bookmarks size-1x1">
-	<div class="bookmark-wrapper">
-	  <img src="./img/edit.svg" class="edit filter"></img>
-	</div>
-      </div>
+      <div id="social" class="cell bookmarks size-1x1"> </div>
       <div class="cell video size-2x2">
 	<video src="./img/flamingos.mp4" type="video/mp4" autoplay="" loop=""></video>
       </div>
-      <div id="wikis" class="cell bookmarks size-1x1">
-	<div class="bookmark-wrapper">
-	  <img src="./img/edit.svg" class="edit filter"></img>
-	</div>
-      </div>
+      <div id="wikis" class="cell bookmarks size-1x1"> </div>
       <div class="cell size-1x1"> </div>
       <div class="cell size-1x1"> </div>
-      <div class="cell weather size-1x1">
-	<span>weather</span>
+      <div id="weather" class="cell size-1x1">
       </div>
-      <div id="home" class="cell bookmarks size-1x1"> 
-	<div class="bookmark-wrapper">
-	  <img src="./img/edit.svg" class="edit filter"></img>
-	</div>
-      </div>
+      <div id="home" class="cell bookmarks size-1x1"> </div>
       <div id="settings-cell" class="size-1x1">
 	<img src="./img/settings.svg" class="filter"></img>
       </div>

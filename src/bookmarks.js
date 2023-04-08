@@ -11,7 +11,6 @@ fetch('./src/data.json')
 
 function buildBookmarkCell(cellId, obj) {
   const cell = document.getElementById(cellId);
-  const listWrapper = cell.querySelector('.bookmark-wrapper');
   const listHeader = document.createElement('span'); 
   const list = document.createElement('ul');
   const listItems = obj.urls;
@@ -32,5 +31,5 @@ function buildBookmarkCell(cellId, obj) {
     list.append(listItem);
   };
 
-  listWrapper.append(listHeader,list);
+  cell.append(listHeader,list);
 };
